@@ -28,6 +28,7 @@ steps {
       steps {
         sh '''
 	docker build -t pudirohith/game:v1 /var/lib/jenkins/workspace/pipeline/
+	docker tag pudirohith/game:v1 gcr.io/fluent-service-325915/game-of-life-1:v1
 	'''
       }
     }
