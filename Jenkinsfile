@@ -32,5 +32,13 @@ steps {
 	'''
       }
     }
+    stage ('Publish Docker Image'){
+        steps {
+          sh '''
+          docker push gcr.io/fluent-service-325915/game-of-life-1:v1
+          '''
+        }
+      }
+
    }
 }
