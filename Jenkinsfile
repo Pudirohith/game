@@ -9,7 +9,7 @@ pipeline {
    stage('git clone') {
          steps {
             // Get some code from a GitHub repository
-            git ''
+            git 'https://github.com/Pudirohith/game.git'
         }  
       }
 	stage ('Compile and Build') {
