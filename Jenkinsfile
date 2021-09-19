@@ -23,5 +23,13 @@ steps {
            archiveArtifacts '**/*.jar'
 	}
      }
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh '''
+	docker build -t pudirohith/game:v1 /var/lib/jenkins/workspace/pipeline/
+	'''
+      }
+    }
    }
 }
