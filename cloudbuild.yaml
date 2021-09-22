@@ -1,2 +1,3 @@
+steps:
 - name: 'gcr.io/$PROJECT_ID/git'
   args: ['clone', 'https://github.com/GoogleCloudPlatform/cloud-builders.git']
