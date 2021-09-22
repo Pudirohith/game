@@ -7,4 +7,4 @@ steps:
   args: ["package", "-Dmaven.test.skip=true"]
 # use the Dockerfile to create a container image
 - name: gcr.io/cloud-builders/docker
-  args: ["build", "-t", "gcr.io/fluent-service-325915/gameoflife", "--build-arg=JAR_FILE=target/gameoflife 1.0-SNAPSHOT.jar", "."]
+  args: ["build", "-t", "gcr.io/fluent-service-325915/gameoflife:v1", "--build-arg=JAR_FILE=target/gameoflife 1.0-SNAPSHOT.jar", "."]
