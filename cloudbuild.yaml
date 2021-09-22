@@ -3,9 +3,9 @@ steps:
   args: ['clone', 'https://github.com/Pudirohith/game.git']
 steps:
  - name: maven:3-jdk-8
-   entrypoint: mvngameoflife-web-1.0-SNAPSHOT.war
-   args: ['install']
+   entrypoint: mvn
+   args: ['package','-Dmaven.test.skip=true']
 steps:
 - name: gcr.io/cloud-builders/docker
-  args: ['build', '-t', 'gcr.io/fluent-service-325915/game-of-life:v1', '--build-arg=JAR_FILE=target/gameoflife-web-1.0-SNAPSHOT.war', '.']
+  args: ['build', '-t', 'gcr.io/fluent-service-325915/game-of-life:v1', '--build-arg=JAR_FILE=target/gameoflife.war', '.']
 images: ['gcr.io/fluent-service-325915/game-of-life:v1']
