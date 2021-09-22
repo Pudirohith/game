@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/$PROJECT_ID/git'
-  args: ['clone', 'https://github.com/GoogleCloudPlatform/cloud-builders.git']
+  args: ['clone', 'https://github.com/Pudirohith/game.git']
 steps:
  - name: maven:3-jdk-8
    entrypoint: mvn
