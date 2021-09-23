@@ -1,5 +1,5 @@
 steps:
-- name: 'gcr.io/fluent-service-325915/git'
+- name: 'gcr.io/$PROJECT_ID/git'
   args: ['clone', 'https://github.com/Pudirohith/game.git']
 # build the Java app and package it into a jar
 - name: maven:3-jdk-8
@@ -7,5 +7,5 @@ steps:
   args: ["package", "-Dmaven.test.skip=true"]
 # use the Dockerfile to create a container image
 - name: gcr.io/cloud-builders/docker
-  args: ["build", "-t", "gcr.io/fluent-service-325915/gameoflife:v1", "--build-arg=JAR_FILE=target/gameoflife-build-1.0-SNAPSHOT.jar", "."]
+  args: ["build", "-t", "gcr.io/fluent-service-325915/gameoflife:v1", "--build-arg=JAR_FILE=/workspace/target/gameoflife-build-1.0-SNAPSHOT.jar", "."]
 images: ['gcr.io/fluent-service-325915/gameoflife:v1']
