@@ -7,5 +7,5 @@ steps:
   args: ["package", "-Dmaven.test.skip=true"]
 steps:
 - name: gcr.io/cloud-builders/docker
-  args: ["build", "-t", "gcr.io/fluent-service-325915/gameoflife:v1", "--build-arg=JAR_FILE=target/gameoflife.war", "."]
+  args: ["build", "-t", "gcr.io/fluent-service-325915/gameoflife:v1", "--build-arg=JAR_FILE=/workspace/gameoflife-web/target/gameoflife.war", "."]
 images: ['gcr.io/fluent-service-325915/gameoflife:v1']
