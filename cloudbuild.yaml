@@ -8,4 +8,4 @@ steps:
 steps:
 - name: gcr.io/cloud-builders/docker
   args: ["build", "-t", "gcr.io/fluent-service-325915/gameoflife:v1", "--build-arg=JAR_FILE=target/gameoflife-build-1.0-SNAPSHOT.jar", "."]
-
+images: ['gcr.io/fluent-service-325915/gameoflife:v1']
