@@ -11,5 +11,5 @@ steps:
   args:
   - run
   - --filename=GKE-nginx.yaml
-  - --location=central1-a
+  - --location=us-central1-a
   - --cluster=cluster-1
