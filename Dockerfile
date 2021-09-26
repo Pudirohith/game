@@ -1,4 +1,5 @@
-FROM openjdk:11-jdk
-ARG JAR_FILE=/workspace/gameoflife-web/target/gameoflife.war
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java", "-Djava.security.edg=file:/dev/./urandom","-jar","/app.jar"]
+FROM ubuntu
+RUN apt-get update
+RUN mkdir /usr/app
+WORKDIR /usr/app
+COPY gameoflife-build/target/gameoflife-build-1.0-SNAPSHOT.jar /usr/app
