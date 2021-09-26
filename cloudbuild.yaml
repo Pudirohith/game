@@ -6,3 +6,10 @@ steps:
   args: ["build", "-t", "gcr.io/fluent-service-325915/game-of-life:v1", "--build-arg=JAR_FILE=target/game-of-life-1.0-SNAPSHOT.jar", "."]
 - name: gcr.io/cloud-builders/docker
   args: ["push", "gcr.io/fluent-service-325915/game-of-life:v1"]
+# deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=GKE-nginx.yaml
+  - --location=central1-a
+  - --cluster=cluster-1
