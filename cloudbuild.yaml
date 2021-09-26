@@ -1,11 +1,5 @@
 steps:
-- name: 'gcr.io/$PROJECT_ID/git'
-  args: ['clone', 'https://github.com/Pudirohith/game.git']
-steps:
 - name: maven:3-jdk-8
   entrypoint: mvn
   args: ["package", "-Dmaven.test.skip=true"]
-steps:
-- name: gcr.io/cloud-builders/docker
-  args: ["build", "-t", "gcr.io/fluent-service-325915/gameoflife:v1", "--build-arg=JAR_FILE=/workspace/gameoflife-web/target/gameoflife.war", "."]
-images: ['gcr.io/fluent-service-325915/gameoflife:v1']
+
